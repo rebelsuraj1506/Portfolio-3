@@ -20,6 +20,18 @@
                 font-family: 'JetBrains+Mono', monospace;
             }
 
+            /* Scroll Margin for Sticky Nav */
+            section {
+                scroll-margin-top: 100px;
+                transition: all 0.5s ease;
+            }
+
+            /* Target Highlight Animation */
+            section:target {
+                animation: section-highlight 2s ease-out;
+                border-radius: 1rem;
+            }
+
             .section-title {
                 border-bottom: 1px solid #1e293b;
                 margin-bottom: 2rem;
@@ -43,11 +55,26 @@
                 transition: all 0.3s ease;
                 padding: 0.4rem 0.6rem;
                 border-radius: 0.5rem;
+                position: relative;
             }
             .nav-link:hover {
                 background: rgba(99, 102, 241, 0.1);
                 color: #10b981;
                 transform: translateY(-1px);
+            }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background: #6366f1;
+                transition: all 0.3s ease;
+            }
+            .nav-link:hover::after {
+                width: 80%;
+                left: 10%;
             }
 
             /* Status Animations */
@@ -295,15 +322,6 @@
                     <div>
                         <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">M.Tech CGPA</p>
                         <p class="text-3xl font-black text-white italic">8.06</p>
-                    </div>
-                </div>
-                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4">
-                    <svg class="w-8 h-8 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                    </svg>
-                    <div>
-                        <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">Cache Hit Gain</p>
-                        <p class="text-3xl font-black text-emerald-400 italic">+28%</p>
                     </div>
                 </div>
             </section>
