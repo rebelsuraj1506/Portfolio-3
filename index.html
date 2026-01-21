@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Suraj Anand | IIT Bhubaneswar | NVIDIA</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap'); 
-            
-            body {
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap'); body {
                 font-family: 'Inter', sans-serif;
                 background-color: #020617;
                 color: #e2e8f0;
@@ -19,25 +17,7 @@
             }
 
             .mono {
-                font-family: 'JetBrains Mono', monospace;
-            }
-
-            /* Scroll Margin for Sticky Nav */
-            section {
-                scroll-margin-top: 100px;
-                transition: all 0.5s ease;
-            }
-
-            /* Target Highlight Animation */
-            section:target {
-                animation: section-highlight 2s ease-out;
-                border-radius: 1rem;
-            }
-
-            @keyframes section-highlight {
-                0% { background-color: rgba(99, 102, 241, 0); }
-                20% { background-color: rgba(99, 102, 241, 0.1); }
-                100% { background-color: rgba(99, 102, 241, 0); }
+                font-family: 'JetBrains+Mono', monospace;
             }
 
             .section-title {
@@ -45,7 +25,7 @@
                 margin-bottom: 2rem;
                 padding-bottom: 0.5rem;
                 color: #94a3b8;
-                font-family: 'JetBrains Mono', monospace;
+                font-family: 'JetBrains+Mono', monospace;
                 text-transform: uppercase;
                 letter-spacing: 0.2em;
                 font-size: 0.75rem;
@@ -54,45 +34,47 @@
                 gap: 0.75rem;
             }
 
+            html {
+                scroll-behavior: smooth;
+            }
+
             /* Navigation Interactivity */
             .nav-link {
                 transition: all 0.3s ease;
                 padding: 0.4rem 0.6rem;
                 border-radius: 0.5rem;
-                position: relative;
             }
             .nav-link:hover {
                 background: rgba(99, 102, 241, 0.1);
                 color: #10b981;
                 transform: translateY(-1px);
             }
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                width: 0;
-                height: 1px;
-                background: #6366f1;
-                transition: all 0.3s ease;
-            }
-            .nav-link:hover::after {
-                width: 80%;
-                left: 10%;
-            }
 
             /* Status Animations */
             @keyframes pulse-ring {
-                0% { transform: scale(.33); opacity: 1; }
-                80%, 100% { opacity: 0; }
+                0% {
+                    transform: scale(.33);
+                    opacity: 1;
+                }
+
+                80%, 100% {
+                    opacity: 0;
+                }
             }
 
             @keyframes blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.3; }
+                0%, 100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.3;
+                }
             }
 
-            .animate-blink { animation: blink 1.5s ease-in-out infinite; }
+            .animate-blink {
+                animation: blink 1.5s ease-in-out infinite;
+            }
 
             .status-dot {
                 position: relative;
@@ -103,7 +85,11 @@
                 height: 8px;
             }
 
-            .status-dot-inner { width: 8px; height: 8px; border-radius: 50%; }
+            .status-dot-inner {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+            }
 
             .status-dot-ring {
                 position: absolute;
@@ -132,7 +118,6 @@
             .contact-email:hover {
                 background: rgba(99, 102, 241, 0.2);
                 transform: translateY(-2px);
-                box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
             }
 
             .social-grid {
@@ -159,20 +144,17 @@
                 border-color: #6366f1;
                 color: #fff;
                 background: rgba(30, 41, 59, 0.5);
-                transform: scale(1.02);
             }
 
             .project-card {
                 border: 1px solid #1e293b;
                 transition: all 0.3s ease;
-                background: rgba(15, 23, 42, 0.3);
             }
 
             .project-card:hover {
                 border-color: #10b981;
                 background-color: rgba(16, 185, 129, 0.05);
                 transform: translateY(-4px);
-                box-shadow: 0 10px 30px -15px rgba(16, 185, 129, 0.2);
             }
 
             .honor-badge {
@@ -189,7 +171,6 @@
             .honor-badge:hover {
                 border-color: #6366f1;
                 background: rgba(99, 102, 241, 0.05);
-                transform: translateX(5px);
             }
 
             /* Card Styles */
@@ -203,27 +184,28 @@
                 transform: translateY(-4px);
                 box-shadow: 0 10px 30px -15px rgba(99, 102, 241, 0.2);
             }
+            .project-card:hover { border-color: #10b981; }
         </style>
     </head>
     <body class="selection:bg-indigo-500/30">
         <!-- NAVIGATION -->
         <nav class="sticky top-0 z-50 bg-[#020617]/90 backdrop-blur-md border-b border-slate-800">
             <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center font-mono text-[11px] uppercase tracking-widest text-slate-400 font-bold">
-                <a href="#" class="text-indigo-400 text-xl italic lowercase flex items-center gap-2 group">
-                    <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <a href="#" class="text-indigo-400 text-xl italic lowercase flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     Suraj Anand
                 </a>
                 <div class="hidden lg:flex gap-4">
-                    <a href="#education" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/></svg> Education</a>
-                    <a href="#experience" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745"/></svg> Experience</a>
-                    <a href="#projects" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4"/></svg> Projects</a>
-                    <a href="#skills" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Skills</a>
-                    <a href="#achievements" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806"/></svg> Achievements</a>
-                    <a href="#contact" class="nav-link flex items-center gap-1 text-indigo-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg> Contact</a>
+                    <a href="#education" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg> Education</a>
+                    <a href="#experience" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745"/></svg> Experience</a>
+                    <a href="#projects" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4"/></svg> Projects</a>
+                    <a href="#skills" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Skills</a>
+                    <a href="#achievements" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806"/></svg> Achievements</a>
+                    <a href="#honors" class="nav-link flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806"/></svg> Honors</a>
+                    <a href="#contact" class="nav-link flex items-center gap-1 text-indigo-400"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg> Contact</a>
                 </div>
             </div>
         </nav>
-
         <!-- HEADER -->
         <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 border-b border-slate-800">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -252,72 +234,102 @@
                     <p class="text-xl text-indigo-400 font-medium mb-6 italic">M.Tech Computer Science & Engineering @ IIT Bhubaneswar</p>
                     <p class="text-slate-400 leading-relaxed max-w-2xl text-base mb-8">
                         Specializing in <strong>Hardware-Software Co-design</strong>
-                        and <strong>Performance Engineering</strong>. 
-                        I focus on cache-aware systems, precise instrumentation, and scalable backend architectures. 
-                        Currently interned at <strong>NVIDIA</strong> analyzing EDA workload performance.
+                        and <strong>Performance Engineering</strong>
+                        . 
+                    I focus on cache-aware systems, precise instrumentation, and scalable backend architectures. 
+                    Currently interned at <strong>NVIDIA</strong>
+                        analyzing EDA workload performance.
+                
                     </p>
                     <div class="flex flex-wrap justify-center md:justify-start gap-6 font-mono text-[11px] uppercase tracking-widest font-bold">
                         <a href="mailto:surajanand200@gmail.com" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50 flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
                             Email
+                    
                         </a>
                         <a href="https://github.com/rebelsuraj1506" target="_blank" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50 flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
                             Github
+                    
                         </a>
                         <a href="https://www.linkedin.com/in/surajanand2000/" target="_blank" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50 flex items-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
                             LinkedIn
+                    
                         </a>
                     </div>
                 </div>
             </div>
         </header>
-
         <main class="max-w-5xl mx-auto px-6 py-16 space-y-24">
             <!-- STATS DASHBOARD -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-indigo-500/50 transition-colors">
-                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4">
+                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
                     <div>
                         <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">GATE CS Rank</p>
                         <p class="text-3xl font-black text-white italic">1267</p>
                     </div>
                 </div>
-                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-indigo-500/50 transition-colors">
-                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9h18"/></svg>
+                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4">
+                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9h18"/>
+                    </svg>
                     <div>
                         <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">Kaggle Global</p>
                         <p class="text-3xl font-black text-white italic">#91</p>
                     </div>
                 </div>
-                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-indigo-500/50 transition-colors">
-                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4">
+                    <svg class="w-8 h-8 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
                     <div>
                         <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">M.Tech CGPA</p>
                         <p class="text-3xl font-black text-white italic">8.06</p>
                     </div>
                 </div>
+                <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl flex items-center gap-4">
+                    <svg class="w-8 h-8 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                    <div>
+                        <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">Cache Hit Gain</p>
+                        <p class="text-3xl font-black text-emerald-400 italic">+28%</p>
+                    </div>
+                </div>
             </section>
-
             <!-- EDUCATION -->
             <section id="education">
                 <h3 class="section-title">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                    </svg>
                     01. Academic Foundation
+            
                 </h3>
                 <div class="space-y-12">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start group">
                         <div class="flex gap-4">
                             <div class="mt-1 text-indigo-500">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors italic">Indian Institute of Technology (IIT) Bhubaneswar</h4>
                                 <p class="text-slate-400 text-sm mt-1">M. Tech in Computer Science and Engineering</p>
                                 <div class="flex flex-wrap gap-4 mt-3">
                                     <span class="mono text-[11px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold uppercase">CGPA: 8.06/10</span>
-                                    <span class="mono text-[11px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 font-bold uppercase tracking-tighter italic">Thesis: Performance Analysis of Cache Replacement Policies</span>
+                                    <span class="mono text-[11px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 font-bold uppercase tracking-tighter">Thesis: Performance Analysis of Cache Replacement Policies</span>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +338,9 @@
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start group">
                         <div class="flex gap-4">
                             <div class="mt-1 text-slate-500">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors italic">Bhagalpur College of Engineering</h4>
@@ -341,12 +355,14 @@
                     </div>
                 </div>
             </section>
-
             <!-- EXPERIENCE -->
             <section id="experience">
                 <h3 class="section-title">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
                     02. Experience
+            
                 </h3>
                 <div class="relative pl-8 border-l border-slate-800 space-y-12">
                     <div>
@@ -357,223 +373,370 @@
                             </h4>
                             <span class="mono text-[11px] text-emerald-400 font-bold uppercase bg-emerald-500/5 px-2 py-1 rounded border border-emerald-500/10">Jan 2025 — July 2025</span>
                         </div>
-                        <p class="text-xs font-mono text-slate-500 uppercase mb-5 tracking-[0.3em] font-bold underline decoration-slate-800 underline-offset-4 italic">
-                            <svg class="w-3.5 h-3.5 inline mb-1 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            Performance Analysis of EDA Workloads
-                        </p>
+                        <p class="text-xs font-mono text-slate-500 uppercase mb-5 tracking-[0.3em] font-bold underline decoration-slate-800 underline-offset-4">Performance Analysis of EDA Workloads</p>
                         <ul class="text-sm text-slate-400 space-y-4 max-w-3xl leading-relaxed">
                             <li class="flex gap-3">
-                                <svg class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                <span>Developed a workflow for generating checkpoints using <strong>Simpoint Methodology</strong>, enabling optimized simulation cycles and performance analysis.</span>
+                                <svg class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>
+                                    Developed a comprehensive workflow for generating checkpoints in EDA workloads using <strong>Simpoint Methodology</strong>
+                                    , enabling optimized simulation cycles and performance analysis.
+                                </span>
                             </li>
                             <li class="flex gap-3">
-                                <svg class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                <span>Validated performance metrics across silicon implementations and architecture models for cross-platform alignment.</span>
+                                <svg class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>Validated and correlated performance metrics across silicon implementations and architecture models for cross-platform alignment.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
-
-            <!-- PROJECTS -->
-            <section id="projects">
-                <h3 class="section-title">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                    03. Selected Engineering Systems
-                </h3>
-                <div class="grid grid-cols-1 gap-8">
-                    <!-- Flagship -->
-                    <div class="project-card rounded-3xl p-8 relative overflow-hidden">
-                        <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
-                            <div>
-                                <span class="mono text-[10px] text-emerald-400 font-bold uppercase tracking-widest bg-emerald-500/10 px-2 py-1 rounded mb-3 inline-block">M.Tech Thesis</span>
-                                <h4 class="text-2xl font-bold text-white italic tracking-tight flex items-center gap-3">
-                                    <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.641.32a2 2 0 01-1.86 0l-.641-.32a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547l-1.4 1.4a2 2 0 00-.572 1.414V20a2 2 0 002 2h12a2 2 0 002-2v-3.172a2 2 0 00-.572-1.414l-1.4-1.4zM12 12V3m0 0l-3 3m3-3l3 3"/></svg>
-                                    Cache Replacement Policy Framework
-                                </h4>
-                            </div>
-                            <a href="https://github.com/rebelsuraj1506/BACP" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-3 py-2 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase flex items-center gap-1.5">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                Source
-                            </a>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-8 italic text-sm text-slate-400">
-                            <p>Implemented <strong>LRU and RRIP</strong> algorithms for L2 caches using <strong>Intel Pin</strong>. Achieved 28% gain in specific trace benchmarks.</p>
-                            <p>Utilized <strong>Valgrind</strong> and <strong>C++</strong> for memory instrumentation, enabling high-fidelity architecture simulation.</p>
-                        </div>
-                        <div class="mt-8 flex flex-wrap gap-2">
-                            <span class="mono text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold">C++</span>
-                            <span class="mono text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold">INTEL PIN</span>
-                            <span class="mono text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold">PYTHON</span>
-                        </div>
+            <!-- RESEARCH & CORE SYSTEMS -->
+        <section id="projects">
+            <h3 class="section-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                03. Selected Engineering Systems
+            </h3>
+            <div class="grid grid-cols-1 gap-8">
+                
+                <!-- Flagship Research Project -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 border border-indigo-500/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-6 opacity-10">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.16.09-.33.14-.5.14s-.34-.05-.5-.14l-7.97-4.43c-.32-.17-.53-.5-.53-.88v-9c0-.38.21-.71.53-.88l7.97-4.43c.16-.09.33-.14.5-.14s.34.05.5.14l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
                     </div>
-
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                        <div>
+                            <span class="mono text-[10px] text-emerald-400 font-bold uppercase tracking-widest bg-emerald-500/10 px-2 py-1 rounded mb-3 inline-block">M.Tech Thesis Research</span>
+                            <h4 class="text-2xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">Performance Analysis of Cache Replacement Policies</h4>
+                        </div>
+                        <a href="https://github.com/rebelsuraj1506/BACP" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-3 py-2 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest flex items-center gap-1.5 shrink-0">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            View Framework
+                        </a>
+                    </div>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <!-- RSNA -->
-                        <div class="project-card rounded-3xl p-8 flex flex-col">
-                            <div class="flex justify-between items-start mb-6">
-                                <h4 class="text-xl font-bold text-white italic flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                                    RSNA Trauma Detection
-                                </h4>
-                                <span class="mono text-[10px] text-indigo-400 font-bold uppercase">Rank #91</span>
-                            </div>
-                            <p class="text-sm text-slate-400 mb-6 italic">Top 1% Global Rank. Developed CNN models for medical image segmentation and trauma classification.</p>
-                            <div class="mt-auto flex flex-wrap gap-2">
-                                <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded font-bold">TENSORFLOW</span>
-                            </div>
-                        </div>
+                        <ul class="text-sm text-slate-400 space-y-4 leading-relaxed italic">
+                            <li class="flex gap-3">
+                                <span class="text-indigo-500 font-bold">01.</span>
+                                <span>Developed and evaluated <strong>LRU and RRIP</strong> algorithms using memory reference traces from <strong>PARSEC benchmarks</strong>.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-indigo-500 font-bold">02.</span>
+                                <span>Achieved <strong>28% increase in cache hit rate</strong> compared to baseline LRU under high-miss workload conditions.</span>
+                            </li>
+                        </ul>
+                        <ul class="text-sm text-slate-400 space-y-4 leading-relaxed italic">
+                            <li class="flex gap-3">
+                                <span class="text-indigo-500 font-bold">03.</span>
+                                <span>Built a <strong>C++ simulation framework</strong> utilizing <strong>Intel Pin and Valgrind</strong> for fine-grained instrumentation.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-indigo-500 font-bold">04.</span>
+                                <span>Enabled reproducible architecture experiments for evaluating policy efficiency.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-1 rounded uppercase font-bold tracking-tighter">C++</span>
+                        <span class="mono text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-1 rounded uppercase font-bold tracking-tighter">Python</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">Intel Pin</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">Valgrind</span>
+                    </div>
+                </div>
 
-                        <!-- NLP -->
-                        <div class="project-card rounded-3xl p-8 flex flex-col">
-                            <div class="flex justify-between items-start mb-6">
-                                <h4 class="text-xl font-bold text-white italic flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
-                                    NLP & LLM Tuning
-                                </h4>
-                                <span class="mono text-[10px] text-emerald-400 font-bold uppercase">93.2% Acc.</span>
-                            </div>
-                            <p class="text-sm text-slate-400 mb-6 italic">Fine-tuned Falcon 7B using QLoRA. Implemented scratch tokenization and sentiment analysis via BERT.</p>
-                            <div class="mt-auto flex flex-wrap gap-2">
-                                <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded font-bold">PYTORCH</span>
-                                <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded font-bold">HUGGINGFACE</span>
-                            </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- RSNA -->
+                    <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-bold text-white italic tracking-tight">RSNA Abdominal Trauma Detection</h4>
+                            <span class="mono text-[10px] text-indigo-400 font-bold">KAGGLE BRONZE</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed italic">
+                            Orchestrated a successful collaborative initiative in a high-stakes Kaggle challenge, achieving a <strong>Global Rank 91st</strong> (Top 1%). Engineered advanced <strong>CNN models</strong> for precise categorization of segmented images across diverse injury types.
+                        </p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">TensorFlow</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">Computer Vision</span>
+                        </div>
+                    </div>
+
+                    <!-- NLP -->
+                    <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col border-l-2 border-indigo-500/30">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-bold text-white italic tracking-tight">Advanced NLP & LLM Tuning</h4>
+                            <span class="mono text-[10px] text-emerald-400 font-bold">93.23% ACCURACY</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed italic">
+                            Fine-tuned <strong>Falcon 7B Instruct</strong> via <strong>QLoRA/LoRA</strong>. Implemented scratch tokenization and Skip-gram. Achieved 93.23% accuracy on <strong>SST2</strong> and 86.6% on movie reviews using <strong>BERT</strong>.
+                        </p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">PyTorch</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">Falcon 7B</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">BERT</span>
+                        </div>
+                    </div>
+
+                    <!-- YOLO Plate -->
+                    <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight mb-6">Vehicle Plate Vision System</h4>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed italic">
+                            Conducted license plate detection through <strong>contour detection</strong> and <strong>YOLO v3</strong> for enhanced accuracy. Implemented character segmentation and recognition using CNN, achieving a <strong>72% end-to-end accuracy</strong>.
+                        </p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">YOLO V3</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">OpenCV</span>
+                        </div>
+                    </div>
+
+                    <!-- Hostel Management -->
+                    <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight mb-6">Hostel Management Infrastructure</h4>
+                        <p class="text-sm text-slate-400 mb-6 leading-relaxed italic">
+                            Built a full-stack web application for automated hostel management. Designed scalable database schemas in <strong>MySQL</strong> and implemented secure student record management using <strong>PHP</strong> and <strong>Bootstrap</strong>.
+                        </p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">PHP</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">MySQL</span>
+                            <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">JS</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- SKILLS -->
-            <section id="skills">
+        <!-- SKILLS -->
+        <section id="skills">
+            <h3 class="section-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                04. Technical Arsenal
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                        <p class="font-bold text-indigo-400 font-mono uppercase tracking-[0.2em] italic text-xs">Runtime Engine</p>
+                    </div>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"> C / C++ </li>
+                        <li class="flex items-center gap-3"> Python</li>
+                        <li class="flex items-center gap-3"> Bash / Shell Scripting</li>
+                        <li class="flex items-center gap-3"> JavaScript / HTML / CSS</li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <p class="font-bold text-emerald-400 font-mono uppercase tracking-[0.2em] italic text-xs">Data & Systems</p>
+                    </div>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"> PostgreSQL / MySQL</li>
+                        <li class="flex items-center gap-3"> MongoDB / NoSQL</li>
+                        <li class="flex items-center gap-3"> Computer Architecture</li>
+                        <li class="flex items-center gap-3"> Operating Systems</li>
+                        <li class="flex items-center gap-3"> Object Oriented Programming</li>
+                        <li class="flex items-center gap-3 text-white"> Data Structure & Algorithms</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                        <p class="font-bold text-indigo-400 font-mono uppercase tracking-[0.2em] italic text-xs">Tools & Cloud</p>
+                    </div>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"> Docker</li>
+                        <li class="flex items-center gap-3"> AWS Cloud Deploy</li>
+                        <li class="flex items-center gap-3 text-indigo-300"> Intel Pin / Valgrind</li>
+                        <li class="flex items-center gap-3"> Git / Linux Commands</li>
+                        <li class="flex items-center gap-3"> Simpoint Methodology</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements">
+            <h3 class="section-title">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z"/></svg>
+                05. Achievements & Certifications
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- GATE 2023 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-indigo-500">
+                    <div class="flex justify-between items-start">
+                        <div><h4 class="text-2xl font-black text-white italic">AIR 1267</h4><p class="text-indigo-400 font-bold mono text-[11px] uppercase">GATE 2023 CS</p></div>
+                        <svg class="w-10 h-10 text-indigo-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-4 text-[11px] mono text-slate-400 font-bold">
+                        <div>Score: <span class="text-white">600</span></div>
+                        <div>Marks: <span class="text-white">54.67</span></div>
+                        <div class="col-span-2">Issued by: IIT Kanpur</div>
+                    </div>
+                    <a href="Assets/Certificates/GATE2023_Scorecard.pdf" target="_blank" class="mt-6 flex items-center gap-2 text-[10px] mono text-indigo-400 hover:text-white font-black">VIEW CERTIFICATE <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg></a>
+                </div>
+                <!-- GATE 2022 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-slate-500">
+                    <div class="flex justify-between items-start">
+                        <div><h4 class="text-2xl font-black text-white italic">AIR 2538</h4><p class="text-slate-400 font-bold mono text-[11px] uppercase">GATE 2022 CS</p></div>
+                        <svg class="w-10 h-10 text-slate-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-4 text-[11px] mono text-slate-400 font-bold">
+                        <div>Score: <span class="text-white">525</span></div>
+                        <div>Marks: <span class="text-white">38.33</span></div>
+                        <div class="col-span-2">Issued by: IIT Kharagpur</div>
+                    </div>
+                    <a href="Assets/Certificates/GATE2022_Scorecard.pdf" target="_blank" class="mt-6 flex items-center gap-2 text-[10px] mono text-slate-400 hover:text-white font-black">VIEW CERTIFICATE <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg></a>
+                </div>
+            </div>
+
+            <!-- Meta Backend Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <svg class="w-8 h-8 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <h4 class="text-sm font-bold text-white mb-2 italic">Intro to Back-end Development</h4>
+                    <p class="text-[10px] mono text-slate-500 mb-4">Meta • Sep 2025</p>
+                    <a href="Assets/Certificates/Introduction to Back-end Development.pdf" target="_blank" class="text-[10px] font-bold text-indigo-400 hover:text-white underline underline-offset-4 decoration-indigo-500">View Certificate</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <svg class="w-8 h-8 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"/><path d="M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4"/></svg>
+                    <h4 class="text-sm font-bold text-white mb-2 italic">Databases for Back-end</h4>
+                    <p class="text-[10px] mono text-slate-500 mb-4">Meta • Oct 2025</p>
+                    <a href="Assets/Certificates/Database.pdf" target="_blank" class="text-[10px] font-bold text-indigo-400 hover:text-white underline underline-offset-4 decoration-indigo-500">View Certificate</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <svg class="w-8 h-8 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v8m0 0l-3-3m3 3l3-3"/><path d="M4 14l8 8 8-8"/></svg>
+                    <h4 class="text-sm font-bold text-white mb-2 italic">Version Control (Git)</h4>
+                    <p class="text-[10px] mono text-slate-500 mb-4">Meta • Sep 2025</p>
+                    <a href="Assets/Certificates/Version Control.pdf" target="_blank" class="text-[10px] font-bold text-indigo-400 hover:text-white underline underline-offset-4 decoration-indigo-500">View Certificate</a>
+                </div>
+            </div>
+        </section>
+            <!-- HONORS & SERVICE -->
+            <section id="honors">
                 <h3 class="section-title">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    04. Technical Arsenal
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                    05. Honors & Professional Service
+            
                 </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
-                    <div>
-                        <div class="flex items-center gap-2 mb-6">
-                            <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                            <p class="font-bold text-indigo-400 font-mono uppercase italic text-xs">Runtime Engine</p>
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- GATE Honor -->
+                    <div class="honor-badge">
+                        <div class="p-3 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-indigo-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z"/>
+                            </svg>
                         </div>
-                        <ul class="text-slate-400 space-y-3 font-medium">
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> C / C++</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4"/></svg> Python</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> Bash / Shell</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg> JS / HTML / CSS</li>
-                        </ul>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-1">
+                                <span class="mono text-[10px] text-indigo-400 font-bold uppercase tracking-widest">Competitive Excellence</span>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                                Secured <span class="text-emerald-400 font-bold">GATE AIR 1267</span>
+                                in CS (2023) and <span class="text-emerald-400 font-bold">AIR 8th</span>
+                                in BCECE [LE] (2018).
+                        
+                            </p>
+                        </div>
                     </div>
-
-                    <div>
-                        <div class="flex items-center gap-2 mb-6">
-                            <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                            <p class="font-bold text-emerald-400 font-mono uppercase italic text-xs">Data & Systems</p>
+                    <!-- Teaching Service -->
+                    <div class="honor-badge">
+                        <div class="p-3 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-indigo-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
                         </div>
-                        <ul class="text-slate-400 space-y-3 font-medium">
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg> SQL / NoSQL</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg> Computer Arch</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg> Operating Systems</li>
-                            <li class="flex items-center gap-2 text-white font-bold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> DS & Algorithms</li>
-                        </ul>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-1">
+                                <span class="mono text-[10px] text-indigo-400 font-bold uppercase tracking-widest">Academic Contribution</span>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                                Teaching Assistant for <strong>Compiler Design Lab</strong>
+                                (CS4P001) & <strong>Intro to ML</strong>
+                                (CS6L036) at <strong>IIT Bhubaneswar</strong>
+                                .
+                        
+                            </p>
+                        </div>
                     </div>
-
-                    <div>
-                        <div class="flex items-center gap-2 mb-6">
-                            <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                            <p class="font-bold text-indigo-400 font-mono uppercase italic text-xs">Tools & Cloud</p>
+                    <!-- Research Leadership -->
+                    <div class="honor-badge">
+                        <div class="p-3 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-indigo-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.641.32a2 2 0 01-1.86 0l-.641-.32a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547l-1.4 1.4a2 2 0 00-.572 1.414V20a2 2 0 002 2h12a2 2 0 002-2v-3.172a2 2 0 00-.572-1.414l-1.4-1.4zM12 12V3m0 0l-3 3m3-3l3 3"/>
+                            </svg>
                         </div>
-                        <ul class="text-slate-400 space-y-3 font-medium">
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg> Intel Pin / Valgrind</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg> AWS / Docker</li>
-                            <li class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg> Simpoint Methodology</li>
-                        </ul>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-1">
+                                <span class="mono text-[10px] text-indigo-400 font-bold uppercase tracking-widest">Technical Leadership</span>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                                Leading project under <strong>Dr. Satish Panda</strong>
+                                for fundus image classification using CNNs and advanced image processing.
+                        
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
-
-            <!-- ACHIEVEMENTS -->
-            <section id="achievements">
-                <h3 class="section-title">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z"/></svg>
-                    05. Achievements & Certifications
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- GATE 2023 -->
-                    <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-indigo-500">
-                        <div class="flex justify-between items-start">
-                            <div><h4 class="text-2xl font-black text-white italic">AIR 1267</h4><p class="text-indigo-400 font-bold mono text-[11px] uppercase tracking-widest">GATE 2023 CS</p></div>
-                            <svg class="w-10 h-10 text-indigo-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 mt-4 text-[11px] mono text-slate-400 font-bold uppercase">
-                            <div>Score: <span class="text-white">600</span></div>
-                            <div>Marks: <span class="text-white">54.67</span></div>
-                        </div>
-                    </div>
-                    <!-- GATE 2022 -->
-                    <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-slate-500">
-                        <div class="flex justify-between items-start">
-                            <div><h4 class="text-2xl font-black text-white italic">AIR 2538</h4><p class="text-slate-400 font-bold mono text-[11px] uppercase tracking-widest">GATE 2022 CS</p></div>
-                            <svg class="w-10 h-10 text-slate-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 mt-4 text-[11px] mono text-slate-400 font-bold uppercase">
-                            <div>Score: <span class="text-white">525</span></div>
-                            <div>Marks: <span class="text-white">38.33</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Meta Back-end certs -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center">
-                        <svg class="w-8 h-8 text-blue-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                        <h4 class="text-sm font-bold text-white italic">Databases for Back-end</h4>
-                        <p class="text-[10px] mono text-slate-500 mt-1 mb-4">Meta • 2025</p>
-                        <a href="Assets/Certificates/Database.pdf" target="_blank" class="text-[10px] text-indigo-400 hover:text-white underline font-bold uppercase tracking-widest">View</a>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center">
-                        <svg class="w-8 h-8 text-indigo-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                        <h4 class="text-sm font-bold text-white italic">Intro to Back-end</h4>
-                        <p class="text-[10px] mono text-slate-500 mt-1 mb-4">Meta • 2025</p>
-                        <a href="Assets/Certificates/Introduction to Back-end Development.pdf" target="_blank" class="text-[10px] text-indigo-400 hover:text-white underline font-bold uppercase tracking-widest">View</a>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl flex flex-col items-center text-center">
-                        <svg class="w-8 h-8 text-emerald-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-1.154A11.998 11.998 0 0112 3v8m0 0l-3-3m3 3l3-3"/></svg>
-                        <h4 class="text-sm font-bold text-white italic">Version Control</h4>
-                        <p class="text-[10px] mono text-slate-500 mt-1 mb-4">Meta • 2025</p>
-                        <a href="Assets/Certificates/Version Control.pdf" target="_blank" class="text-[10px] text-indigo-400 hover:text-white underline font-bold uppercase tracking-widest">View</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CONTACT -->
+            <!-- CONTACT SECTION -->
             <section id="contact" class="pt-20">
                 <div class="contact-info">
                     <h2 class="text-4xl font-bold text-white mb-4 tracking-tighter italic underline decoration-indigo-500 underline-offset-[12px]">Optimizing for the Next Opportunity.</h2>
                     <p class="text-slate-400 max-w-xl text-base leading-relaxed mb-10 italic mt-8">
-                        I am actively seeking <strong>SDE-1 Backend and Systems Engineering</strong> roles. 
-                        I enjoy discussing hardware-software co-design, performance benchmarking, and scalable system infrastructure.
+                        I am actively seeking <strong>SDE-1 Backend and Systems Engineering</strong>
+                        roles. 
+                    I enjoy discussing hardware-software co-design, performance benchmarking, and scalable system infrastructure.
+                
                     </p>
                     <a href="mailto:surajanand200@gmail.com" class="contact-email">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-10 6L2 7"></path></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="M22 7l-10 6L2 7"></path>
+                        </svg>
                         surajanand200@gmail.com
+                
                     </a>
                 </div>
                 <div class="social-grid">
                     <a href="https://www.linkedin.com/in/surajanand2000/" target="_blank" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
                         <span>LinkedIn</span>
                     </a>
                     <a href="https://github.com/rebelsuraj1506" target="_blank" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
                         <span>GitHub</span>
                     </a>
                     <a href="https://x.com/SurajAn37241485" target="_blank" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg>
-                        <span>X (Twitter)</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path>
+                        </svg>
+                        <span>X</span>
+                    </a>
+                    <a href="https://www.instagram.com/suraj_anand_15/" target="_blank" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
                     </a>
                 </div>
             </section>
         </main>
-
         <footer class="max-w-5xl mx-auto px-6 py-24 text-center border-t border-slate-900">
             <p class="mono text-[9px] tracking-[0.8em] text-slate-700 uppercase italic">Suraj Anand // Optimized for Performance // SDE-1 Backend // M.Tech IIT</p>
         </footer>
