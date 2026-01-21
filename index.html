@@ -10,6 +10,7 @@
         .font-mono { font-family: 'JetBrains+Mono', monospace; }
         html { scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(to right, #818cf8, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.5); background-color: rgba(15, 23, 42, 0.8); }
     </style>
 </head>
 <body class="selection:bg-indigo-500/30">
@@ -19,15 +20,20 @@
   <!-- NAVIGATION -->
   <nav class="fixed top-0 z-50 w-full border-b border-slate-800 bg-[#020617]/80 backdrop-blur-md">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-      <span class="font-mono text-xl font-bold tracking-tighter text-indigo-400 italic">SURAJ ANAND</span>
+      <span class="font-mono text-xl font-bold tracking-tighter text-indigo-400 italic underline decoration-emerald-500">SURAJ ANAND</span>
+      
       <div class="hidden gap-8 text-sm font-medium text-slate-400 md:flex">
         <a href="#experience" class="transition-colors hover:text-emerald-400 uppercase tracking-widest text-[10px]">Experience</a>
         <a href="#systems" class="transition-colors hover:text-emerald-400 uppercase tracking-widest text-[10px]">Systems</a>
         <a href="#skills" class="transition-colors hover:text-emerald-400 uppercase tracking-widest text-[10px]">Technical Stack</a>
       </div>
-      <div class="flex gap-4">
-        <a href="mailto:surajanand200@gmail.com" class="text-slate-400 hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/rebelsuraj1506" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/surajanand2000/" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
     </div>
@@ -39,226 +45,207 @@
       <div class="animate-in fade-in slide-in-from-bottom-4 duration-1000">
         <div class="flex items-center gap-2 mb-4">
             <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <h2 class="font-mono text-xs uppercase tracking-[0.3em] text-emerald-400">Available for SDE-1 / Backend Roles</h2>
+            <h2 class="font-mono text-xs uppercase tracking-[0.3em] text-emerald-400">NVIDIA ASIC Engineer Intern</h2>
         </div>
         <h1 class="mb-6 text-6xl font-bold leading-[1.1] text-white md:text-7xl lg:text-8xl tracking-tighter">
           Systems <span class="text-slate-500">&</span> <br />
           <span class="gradient-text">Performance.</span>
         </h1>
         <p class="max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
-          M.Tech Computer Science @ <span class="text-white">IIT Bhubaneswar</span>. 
-          Currently <span class="text-white font-semibold italic text-indigo-300">ASIC Engineer Intern at NVIDIA</span>. 
-          Specializing in Cache Optimization, Scalable Backend Architectures, and System Performance.
+          M.Tech CSE @ <span class="text-white">IIT Bhubaneswar</span>. 
+          GATE AIR 1267. Focused on hardware-software co-design, 
+          cache optimization, and high-throughput backend architecture.
         </p>
         
         <div class="mt-10 flex flex-wrap gap-4">
             <a href="mailto:surajanand200@gmail.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-lg text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2">
-                Hire Suraj Anand
+                Get in Touch
             </a>
-            <a href="https://github.com/rebelsuraj1506" target="_blank" class="border border-slate-700 hover:bg-slate-800 text-white px-8 py-4 rounded-lg text-sm font-bold transition-all font-mono inline-block">
-                View GitHub_
+            <a href="https://github.com/rebelsuraj1506" target="_blank" class="border border-slate-700 hover:bg-slate-800 text-white px-8 py-4 rounded-lg text-sm font-bold transition-all font-mono">
+                Github_Repo
             </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KPI DASHBOARD -->
+  <!-- DASHBOARD -->
   <section class="border-y border-slate-900 bg-slate-900/20 px-6 py-10">
-    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-8 md:grid-cols-4 text-center md:text-left">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-8 md:grid-cols-4">
       <div class="group border-l border-slate-800 pl-4">
-        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500">GATE 2023 CS</p>
-        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-indigo-400">AIR 1267</p>
+        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500 italic">GATE Rank</p>
+        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-indigo-400">1267</p>
       </div>
       <div class="group border-l border-slate-800 pl-4">
-        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500">Kaggle Global</p>
-        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-emerald-400">Rank 91</p>
+        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500 italic">Kaggle Global</p>
+        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-emerald-400">91st</p>
       </div>
       <div class="group border-l border-slate-800 pl-4">
-        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500">M.Tech CGPA</p>
-        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-indigo-400">8.06/10</p>
+        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500 italic">M.Tech CGPA</p>
+        <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-indigo-400">8.06</p>
       </div>
       <div class="group border-l border-slate-800 pl-4">
-        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500">Cache Hit Δ</p>
+        <p class="mb-1 font-mono text-[10px] uppercase tracking-widest text-slate-500 italic">Optimization</p>
         <p class="text-3xl font-bold tracking-tight text-white transition-colors group-hover:text-emerald-400">+28%</p>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience" class="px-6 py-24 bg-slate-900/10">
-    <div class="mx-auto max-w-5xl">
-      <h3 class="mb-12 font-mono text-xs uppercase tracking-[0.4em] text-indigo-400 italic">Work Experience</h3>
-      
-      <div class="border-l-2 border-indigo-500 pl-8 relative">
-        <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
-        <div class="mb-2 flex flex-wrap items-center justify-between gap-4">
-            <h4 class="text-2xl font-bold text-white tracking-tight">ASIC Engineer (Intern) @ NVIDIA</h4>
-            <span class="font-mono text-sm text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded">Jan 2025 — July 2025</span>
-        </div>
-        <p class="text-slate-400 mb-6 italic text-sm uppercase tracking-widest tracking-tighter">Performance Analysis of EDA Workloads</p>
-        <ul class="space-y-4 text-slate-300 max-w-3xl text-sm leading-relaxed">
-            <li class="flex gap-3">
-                <span class="text-indigo-500 font-bold">01</span>
-                Developed a workflow for generating checkpoints in EDA workloads using <strong>SimPoint methodology</strong>, enabling optimized simulation and performance analysis.
-            </li>
-            <li class="flex gap-3">
-                <span class="text-indigo-500 font-bold">02</span>
-                Validated and correlated performance metrics of EDA workloads across silicon implementations and different CPU architectures.
-            </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SYSTEMS / PROJECTS -->
+  <!-- SYSTEMS / PROJECTS SECTION -->
   <section id="systems" class="px-6 py-24">
     <div class="mx-auto max-w-5xl">
       <div class="mb-12 flex items-end justify-between">
-        <h3 class="text-3xl font-bold text-white tracking-tight">Engineering Projects</h3>
-        <span class="hidden md:inline font-mono text-xs text-slate-500 uppercase tracking-widest">Selected Technical Works</span>
+        <h3 class="text-3xl font-bold text-white tracking-tight underline decoration-indigo-500">System Engineering</h3>
+        <span class="hidden md:inline font-mono text-xs text-slate-500 uppercase tracking-widest italic">Source code available on GitHub</span>
       </div>
 
-      <div class="grid gap-8 md:grid-cols-2">
+      <div class="grid gap-6 md:grid-cols-2">
         
-        <!-- Project 1: Cache Framework -->
-        <div class="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all hover:border-indigo-500/50 hover:bg-slate-900/60">
-          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+        <!-- Cache Project -->
+        <div class="card-hover relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all">
+          <div class="mb-6 flex items-center justify-between">
+              <div class="bg-indigo-500/10 p-3 rounded-lg text-indigo-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+              </div>
+              <a href="https://github.com/rebelsuraj1506/BACP" target="_blank" class="text-xs font-mono text-slate-500 hover:text-white flex items-center gap-1 border border-slate-700 px-2 py-1 rounded">Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
           </div>
-          <h4 class="mb-3 text-xl font-bold text-white">Cache Performance Analysis</h4>
+          <h4 class="mb-2 text-xl font-bold text-white tracking-tight italic">Cache Analysis Framework (BACP)</h4>
           <p class="mb-6 text-sm leading-relaxed text-slate-400">
-            C++ framework using <strong>Intel Pin</strong> and <strong>Valgrind</strong> to instrument memory reference traces. Optimized LRU/RRIP algorithms for <strong>PARSEC benchmarks</strong>, achieving a <strong>28% increase</strong> in cache hit rates.
+            C++ simulation framework using <strong>Intel Pin</strong> for memory trace instrumentation. Achieved 28% hit-rate gain in PARSEC benchmarks.
           </p>
           <div class="flex flex-wrap gap-2">
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">C++</span>
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Intel Pin</span>
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Valgrind</span>
+            <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">C++</span>
+            <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">Intel Pin</span>
+            <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">Architecture</span>
           </div>
         </div>
 
-        <!-- Project 2: LLM API -->
-        <div class="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all hover:border-emerald-500/50 hover:bg-slate-900/60">
-          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <!-- LLM Project -->
+        <div class="card-hover relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all">
+          <div class="mb-6 flex items-center justify-between">
+              <div class="bg-emerald-500/10 p-3 rounded-lg text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <a href="https://github.com/rebelsuraj1506/Falcon" target="_blank" class="text-xs font-mono text-slate-500 hover:text-white flex items-center gap-1 border border-slate-700 px-2 py-1 rounded">Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
           </div>
-          <h4 class="mb-3 text-xl font-bold text-white">NLP & LLM Inference API</h4>
+          <h4 class="mb-2 text-xl font-bold text-white tracking-tight italic">Falcon LLM QLoRA</h4>
           <p class="mb-6 text-sm leading-relaxed text-slate-400">
-            Fine-tuned <strong>Falcon 7B Instruct</strong> via QLoRA for question-answering. Deployed <strong>BERT models</strong> for sentiment analysis on SST2 dataset (67k sentences) achieving <strong>93.23% accuracy</strong>.
+            Fine-tuned Falcon 7B Instruct via QLoRA. Optimized inference for BERT sentiment analysis on SST2 dataset.
           </p>
           <div class="flex flex-wrap gap-2">
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Python</span>
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">BERT</span>
-            <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">FastAPI</span>
+            <span class="rounded bg-emerald-500/10 px-2 py-1 font-mono text-[9px] uppercase text-emerald-300">Python</span>
+            <span class="rounded bg-emerald-500/10 px-2 py-1 font-mono text-[9px] uppercase text-emerald-300">BERT</span>
+            <span class="rounded bg-emerald-500/10 px-2 py-1 font-mono text-[9px] uppercase text-emerald-300">LLM</span>
           </div>
         </div>
 
-        <!-- Project 3: RSNA Kaggle -->
-        <div class="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all hover:border-indigo-500/50 hover:bg-slate-900/60">
-            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <!-- RSNA Project -->
+        <div class="card-hover relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all">
+            <div class="mb-6 flex items-center justify-between">
+                <div class="bg-indigo-500/10 p-3 rounded-lg text-indigo-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+                <a href="https://github.com/rebelsuraj1506/RSNA" target="_blank" class="text-xs font-mono text-slate-500 hover:text-white flex items-center gap-1 border border-slate-700 px-2 py-1 rounded">Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-white">RSNA Abdominal Trauma Detection</h4>
+            <h4 class="mb-2 text-xl font-bold text-white tracking-tight italic">RSNA Trauma Detection (#91 Global)</h4>
             <p class="mb-6 text-sm leading-relaxed text-slate-400">
-              Ranked <strong>91st globally</strong> in a high-stakes Kaggle challenge. Engineered a CNN model for precise categorization of segmented trauma images, earning a <strong>Bronze Medal</strong>.
+              Bronze medal winning CNN pipeline for medical segmentation and categorization of diverse injury types.
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">CNN</span>
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Tensorflow</span>
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Computer Vision</span>
+              <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">Tensorflow</span>
+              <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">Computer Vision</span>
             </div>
         </div>
 
-        <!-- Project 4: Patient Classification -->
-        <div class="group rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all hover:border-emerald-500/50 hover:bg-slate-900/60">
-            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        <!-- License Plate Project -->
+        <div class="card-hover relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all">
+            <div class="mb-6 flex items-center justify-between">
+                <div class="bg-emerald-500/10 p-3 rounded-lg text-emerald-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <a href="https://github.com/rebelsuraj1506/License-number-plate-detection" target="_blank" class="text-xs font-mono text-slate-500 hover:text-white flex items-center gap-1 border border-slate-700 px-2 py-1 rounded">Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
             </div>
-            <h4 class="mb-3 text-xl font-bold text-white">Precise Patient Classification</h4>
+            <h4 class="mb-2 text-xl font-bold text-white tracking-tight italic">License Plate Recognition</h4>
             <p class="mb-6 text-sm leading-relaxed text-slate-400">
-              Led research under Dr. Satish Panda to develop CNN-based classification of fundus images. Leveraged advanced <strong>image processing</strong> for precise patient diagnosis.
+              End-to-end vision system using YOLO v3 and CNN character segmentation. Achieved 72% system accuracy.
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Research</span>
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Python</span>
-              <span class="rounded bg-slate-800 px-2 py-1 font-mono text-[10px] uppercase text-slate-300">Deep Learning</span>
+              <span class="rounded bg-emerald-500/10 px-2 py-1 font-mono text-[9px] uppercase text-emerald-300">YOLO v3</span>
+              <span class="rounded bg-emerald-500/10 px-2 py-1 font-mono text-[9px] uppercase text-emerald-300">Segmentation</span>
+            </div>
+        </div>
+
+        <!-- Hostel Project -->
+        <div class="card-hover relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 transition-all md:col-span-2">
+            <div class="mb-6 flex items-center justify-between">
+                <div class="bg-indigo-500/10 p-3 rounded-lg text-indigo-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/><path d="M13 13h4"/><path d="M13 17h4"/></svg>
+                </div>
+                <a href="https://github.com/rebelsuraj1506/Hostel-Management-System" target="_blank" class="text-xs font-mono text-slate-500 hover:text-white flex items-center gap-1 border border-slate-700 px-2 py-1 rounded">Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+            <h4 class="mb-2 text-xl font-bold text-white tracking-tight italic">Hostel Management Web System</h4>
+            <p class="mb-6 text-sm leading-relaxed text-slate-400">
+              Full-stack application for room allocation and student records using PHP, MySQL, and modern frontend stack.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">PHP</span>
+              <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">MySQL</span>
+              <span class="rounded bg-indigo-500/10 px-2 py-1 font-mono text-[9px] uppercase text-indigo-300">CRUD</span>
             </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TECHNICAL STACK -->
+  <!-- STACK SECTION -->
   <section id="skills" class="bg-slate-900/20 px-6 py-24 border-y border-slate-800">
-    <div class="mx-auto max-w-5xl">
-      <h3 class="mb-12 font-mono text-xs uppercase tracking-[0.4em] text-emerald-400">Engineering Arsenal</h3>
+    <div class="mx-auto max-w-5xl text-center md:text-left">
+      <h3 class="mb-12 font-mono text-xs uppercase tracking-[0.4em] text-emerald-400 italic">Technical Arsenal</h3>
       <div class="grid gap-12 md:grid-cols-3">
         <div>
-          <h5 class="mb-6 flex items-center gap-2 font-bold text-white uppercase tracking-tighter text-sm underline decoration-indigo-500">
-            Programming
-          </h5>
+          <h5 class="mb-6 text-white font-bold uppercase tracking-widest text-sm italic underline decoration-indigo-500">Core Engine</h5>
           <ul class="space-y-3 font-mono text-xs text-slate-500">
-            <li><span class="text-indigo-500">></span> C / C++ (17/20)</li>
-            <li><span class="text-indigo-500">></span> Python 3.x</li>
-            <li><span class="text-indigo-500">></span> Bash / Shell Scripting</li>
-            <li><span class="text-indigo-500">></span> HTML / CSS / JavaScript</li>
+            <li>&gt; C / C++ (17/20)</li>
+            <li>&gt; Python 3.10</li>
+            <li>&gt; Computer Architecture</li>
+            <li>&gt; OS & Multi-threading</li>
           </ul>
         </div>
         <div>
-          <h5 class="mb-6 flex items-center gap-2 font-bold text-white uppercase tracking-tighter text-sm underline decoration-emerald-500">
-            Data & Backend
-          </h5>
+          <h5 class="mb-6 text-white font-bold uppercase tracking-widest text-sm italic underline decoration-emerald-500">Data Backend</h5>
           <ul class="space-y-3 font-mono text-xs text-slate-500">
-            <li><span class="text-emerald-500">></span> MySQL / PostgreSQL</li>
-            <li><span class="text-emerald-500">></span> NoSQL / MongoDB</li>
-            <li><span class="text-emerald-500">></span> PHP / React.js</li>
-            <li><span class="text-emerald-500">></span> Node.js (Learning)</li>
+            <li>&gt; MySQL / PostgreSQL</li>
+            <li>&gt; MongoDB / NoSQL</li>
+            <li>&gt; PHP / FastAPI</li>
+            <li>&gt; Redis (Caching)</li>
           </ul>
         </div>
         <div>
-          <h5 class="mb-6 flex items-center gap-2 font-bold text-white uppercase tracking-tighter text-sm underline decoration-indigo-500">
-            Tools & Systems
-          </h5>
+          <h5 class="mb-6 text-white font-bold uppercase tracking-widest text-sm italic underline decoration-indigo-500">Infrastructure</h5>
           <ul class="space-y-3 font-mono text-xs text-slate-500">
-            <li><span class="text-indigo-500">></span> Docker / Git / GitHub</li>
-            <li><span class="text-indigo-500">></span> AWS / Linux Commands</li>
-            <li><span class="text-indigo-500">></span> Intel Pin / Valgrind</li>
-            <li><span class="text-indigo-500">></span> VS Code / Colab</li>
+            <li>&gt; Docker / CI-CD</li>
+            <li>&gt; AWS / Cloud Deploy</li>
+            <li>&gt; Linux (Kernel/Bash)</li>
+            <li>&gt; Git / Instrumentation</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="px-6 py-24 bg-slate-900/10">
-    <div class="mx-auto max-w-5xl">
-        <h3 class="mb-12 font-mono text-xs uppercase tracking-[0.4em] text-indigo-400 italic text-center">Academic Foundation</h3>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="bg-slate-900/40 p-8 rounded-xl border border-slate-800 hover:border-indigo-500/30 transition-all">
-                <p class="text-emerald-400 font-mono text-[10px] mb-2 uppercase tracking-widest">July 2023 — June 2025</p>
-                <h4 class="text-white font-bold text-xl mb-1 italic">IIT Bhubaneswar</h4>
-                <p class="text-slate-400 text-sm mb-4">M.Tech in Computer Science and Engineering</p>
-                <p class="text-indigo-400 font-bold font-mono text-lg underline decoration-white/20">CGPA: 8.06</p>
-            </div>
-            <div class="bg-slate-900/40 p-8 rounded-xl border border-slate-800 hover:border-indigo-500/30 transition-all">
-                <p class="text-emerald-400 font-mono text-[10px] mb-2 uppercase tracking-widest">Sept 2018 — Nov 2021</p>
-                <h4 class="text-white font-bold text-xl mb-1 italic">Bhagalpur College of Engg</h4>
-                <p class="text-slate-400 text-sm mb-4">B.Tech in Computer Science and Engineering</p>
-                <p class="text-indigo-400 font-bold font-mono text-lg underline decoration-white/20">CGPA: 8.08</p>
-            </div>
-        </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-900 py-12 text-center bg-[#010411]">
-    <div class="flex justify-center gap-10 mb-8">
-        <a href="https://linkedin.com/in/surajanand2000" target="_blank" class="text-slate-500 hover:text-indigo-400 transition-colors uppercase font-mono text-[10px] tracking-widest">LinkedIn</a>
-        <a href="https://github.com/rebelsuraj1506" target="_blank" class="text-slate-500 hover:text-emerald-400 transition-colors uppercase font-mono text-[10px] tracking-widest">GitHub</a>
-        <a href="mailto:surajanand200@gmail.com" class="text-slate-500 hover:text-white transition-colors uppercase font-mono text-[10px] tracking-widest">Contact_</a>
+  <footer class="border-t border-slate-900 py-16 text-center bg-[#010411]">
+    
+    <!-- SOCIAL LINKS -->
+    <div class="flex flex-wrap justify-center gap-8 mb-10 opacity-70 hover:opacity-100 transition-opacity">
+        <a href="https://linkedin.com/in/surajanand2000" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest">LinkedIn</a>
+        <a href="https://github.com/rebelsuraj1506" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest">GitHub</a>
+        <a href="https://x.com/SurajAn37241485" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest">X / Twitter</a>
+        <a href="https://www.instagram.com/suraj_anand_15/" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest">Instagram</a>
+        <a href="mailto:surajanand200@gmail.com" class="text-slate-400 hover:text-white flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest">Email</a>
     </div>
-    <p class="font-mono text-[10px] tracking-[0.5em] text-slate-700 uppercase">Suraj Anand // Optimized for Performance // 2025</p>
+
+    <p class="font-mono text-[10px] tracking-[0.6em] text-slate-700 uppercase italic">Suraj Anand // Optimized for Performance // SDE-1 Backend // M.Tech IIT</p>
   </footer>
 </div>
 
