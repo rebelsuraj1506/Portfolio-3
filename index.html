@@ -8,10 +8,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap');
         
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #18181b; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #e2e8f0; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .mono { font-family: 'JetBrains+Mono', monospace; }
-        .section-title { border-bottom: 2px solid #f4f4f5; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
+        .section-title { border-bottom: 1px solid #1e293b; margin-bottom: 2rem; padding-bottom: 0.5rem; color: #94a3b8; font-family: 'JetBrains+Mono', monospace; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; }
         html { scroll-behavior: smooth; }
 
         /* Reference Site Specific Interface Styles */
@@ -19,190 +19,312 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #4f46e5;
+            color: #818cf8;
             font-weight: 500;
             text-decoration: none;
             margin-top: 1rem;
-            padding: 8px 16px;
-            background: #f5f3ff;
+            padding: 10px 20px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
             border-radius: 8px;
             transition: all 0.2s;
         }
-        .contact-email:hover { background: #ede9fe; }
+        .contact-email:hover { background: rgba(99, 102, 241, 0.2); transform: translateY(-2px); }
 
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 12px;
             margin-top: 2rem;
         }
         .social-link {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px;
-            border: 1px solid #f4f4f5;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #1e293b;
             border-radius: 8px;
-            color: #52525b;
+            color: #94a3b8;
             text-decoration: none;
             font-size: 13px;
             transition: all 0.2s;
         }
         .social-link:hover {
-            border-color: #4f46e5;
-            color: #4f46e5;
-            background: #fafafa;
+            border-color: #6366f1;
+            color: #fff;
+            background: rgba(30, 41, 59, 0.5);
         }
-        .project-card:hover { border-color: #4f46e5; background-color: #fafafa; }
+        .project-card { border: 1px solid #1e293b; transition: all 0.3s ease; }
+        .project-card:hover { border-color: #10b981; background-color: rgba(16, 185, 129, 0.05); transform: translateY(-4px); }
     </style>
 </head>
-<body class="selection:bg-indigo-100">
+<body class="selection:bg-indigo-500/30">
 
     <!-- NAVIGATION -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-100">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center font-mono text-[11px] uppercase tracking-widest text-zinc-500 font-bold">
-            <a href="#" class="text-zinc-900 font-bold tracking-tighter text-lg lowercase italic">suraj.anand</a>
-            <div class="flex gap-6">
-                <a href="#education" class="hover:text-indigo-600 transition-colors">Edu</a>
-                <a href="#experience" class="hover:text-indigo-600 transition-colors">Exp</a>
-                <a href="#projects" class="hover:text-indigo-600 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+    <nav class="sticky top-0 z-50 bg-[#020617]/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center font-mono text-[11px] uppercase tracking-widest text-slate-400 font-bold">
+            <a href="#" class="text-indigo-400 font-bold tracking-tighter text-xl italic lowercase decoration-emerald-500 underline underline-offset-4">suraj.anand</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
+                <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">Systems</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- HEADER -->
-    <header class="max-w-4xl mx-auto px-6 pt-20 pb-16">
-        <div class="flex flex-col md:flex-row items-center gap-10">
-            <div class="w-32 h-32 bg-zinc-50 rounded-2xl flex-shrink-0 border border-zinc-100 flex items-center justify-center shadow-sm">
-                <span class="text-zinc-300 font-mono text-[10px]">Suraj Anand</span>
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 border-b border-slate-800">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-44 h-44 bg-slate-900 rounded-3xl flex-shrink-0 border border-slate-800 flex items-center justify-center shadow-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 opacity-50"></div>
+                <span class="text-slate-500 font-mono text-[10px] uppercase tracking-widest z-10">Suraj Anand</span>
             </div>
             <div class="text-center md:text-left">
-                <h1 class="text-5xl font-bold text-zinc-900 mb-2 tracking-tight">Suraj Anand</h1>
-                <p class="text-lg text-indigo-600 font-medium mb-4 italic">M.Tech Computer Science @ IIT Bhubaneswar</p>
-                <p class="text-zinc-500 leading-relaxed max-w-xl text-sm italic">
-                    GATE AIR 1267 (CS 2023). Currently <strong>ASIC Engineer Intern at NVIDIA</strong>. 
-                    I work on performance analysis of EDA workloads and high-efficiency cache architectures.
+                <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="mono text-[10px] text-emerald-400 uppercase tracking-widest font-bold">ASIC Engineer @ NVIDIA</span>
+                </div>
+                <h1 class="text-6xl font-bold text-white mb-3 tracking-tighter">Suraj Anand</h1>
+                <p class="text-xl text-indigo-400 font-medium mb-6 italic italic">M.Tech Computer Science & Engineering @ IIT Bhubaneswar</p>
+                <p class="text-slate-400 leading-relaxed max-w-2xl text-base mb-8">
+                    Specializing in <strong>Hardware-Software Co-design</strong> and <strong>Performance Engineering</strong>. 
+                    I focus on cache-aware systems, precise instrumentation, and scalable backend architectures. 
+                    Currently interned at <strong>NVIDIA</strong> analyzing EDA workload performance.
                 </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-6 font-mono text-[11px] uppercase tracking-widest font-bold">
+                    <a href="mailto:surajanand200@gmail.com" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50">Email_Mail</a>
+                    <a href="https://github.com/rebelsuraj1506" target="_blank" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50">Github_Repo</a>
+                    <a href="https://www.linkedin.com/in/surajanand2000/" target="_blank" class="text-slate-200 hover:text-indigo-400 transition-colors underline underline-offset-4 decoration-indigo-500/50">LinkedIn_Auth</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-10 space-y-20">
+    <main class="max-w-5xl mx-auto px-6 py-16 space-y-24">
 
-        <!-- EDUCATION SECTION (Academic Timeline) -->
+        <!-- STATS DASHBOARD -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">GATE CS Rank</p>
+                <p class="text-3xl font-black text-white italic">1267</p>
+            </div>
+            <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">Kaggle Global</p>
+                <p class="text-3xl font-black text-white italic">#91</p>
+            </div>
+            <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">M.Tech CGPA</p>
+                <p class="text-3xl font-black text-white italic">8.06</p>
+            </div>
+            <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                <p class="mono text-[10px] text-slate-500 uppercase tracking-widest mb-1 italic">Cache Hit Gain</p>
+                <p class="text-3xl font-black text-emerald-400 italic">+28%</p>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
         <section id="education">
-            <h3 class="section-title text-xl text-zinc-900">Education</h3>
-            <div class="space-y-8">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+            <h3 class="section-title">01. Academic Foundation</h3>
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start group">
                     <div>
-                        <h4 class="font-bold text-zinc-900 italic">Indian Institute of Technology (IIT) Bhubaneswar</h4>
-                        <p class="text-zinc-600 text-sm">M. Tech in Computer Science and Engineering</p>
-                        <p class="mono text-[11px] text-indigo-600 font-bold mt-1">CGPA: 8.06/10</p>
+                        <h4 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors italic">Indian Institute of Technology (IIT) Bhubaneswar</h4>
+                        <p class="text-slate-400 text-sm mt-1">M. Tech in Computer Science and Engineering</p>
+                        <div class="flex gap-4 mt-3">
+                            <span class="mono text-[11px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold uppercase">CGPA: 8.06/10</span>
+                            <span class="mono text-[11px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 font-bold uppercase tracking-tighter">Thesis: Cache Replacement Policies</span>
+                        </div>
                     </div>
-                    <span class="mono text-[11px] text-zinc-400">July 2023 — June 2025</span>
+                    <span class="mono text-[11px] text-slate-500 mt-2 md:mt-0 font-bold uppercase">July 2023 — June 2025</span>
                 </div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start group">
                     <div>
-                        <h4 class="font-bold text-zinc-900 italic">Bhagalpur College of Engineering</h4>
-                        <p class="text-zinc-600 text-sm">B. Tech in Computer Science and Engineering</p>
-                        <p class="mono text-[11px] text-indigo-600 font-bold mt-1">CGPA: 8.08/10</p>
+                        <h4 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors italic">Bhagalpur College of Engineering</h4>
+                        <p class="text-slate-400 text-sm mt-1">B. Tech in Computer Science and Engineering</p>
+                        <div class="flex gap-4 mt-3">
+                            <span class="mono text-[11px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold uppercase">CGPA: 8.08/10</span>
+                            <span class="mono text-[11px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 font-bold uppercase tracking-tighter italic">BCECE [LE] Rank 8</span>
+                        </div>
                     </div>
-                    <span class="mono text-[11px] text-zinc-400">Sept 2018 — Nov 2021</span>
+                    <span class="mono text-[11px] text-slate-500 mt-2 md:mt-0 font-bold uppercase">Sept 2018 — Nov 2021</span>
                 </div>
             </div>
         </section>
 
         <!-- EXPERIENCE -->
         <section id="experience">
-            <h3 class="section-title text-xl text-zinc-900">Experience</h3>
-            <div class="space-y-10">
-                <div class="relative pl-6 border-l border-zinc-200">
-                    <div class="absolute -left-[4.5px] w-2 h-2 bg-indigo-600 rounded-full mt-1.5"></div>
-                    <div class="flex justify-between items-start mb-1">
-                        <h4 class="font-bold text-zinc-900">ASIC Engineer (Intern) <span class="text-indigo-600 font-medium italic">@ NVIDIA</span></h4>
-                        <span class="mono text-[11px] text-zinc-400 italic">2025 — Present</span>
+            <h3 class="section-title">02. Experience</h3>
+            <div class="relative pl-8 border-l border-slate-800 space-y-12">
+                <div>
+                    <div class="absolute -left-[5px] w-2.5 h-2.5 bg-indigo-500 rounded-full mt-2 shadow-[0_0_10px_#6366f1]"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <h4 class="text-2xl font-bold text-white tracking-tight italic uppercase">ASIC Engineer (Intern) <span class="text-indigo-500">@ NVIDIA</span></h4>
+                        <span class="mono text-[11px] text-emerald-400 font-bold uppercase bg-emerald-500/5 px-2 py-1 rounded border border-emerald-500/10">Jan 2025 — Present</span>
                     </div>
-                    <p class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3">Performance Analysis of EDA Workloads</p>
-                    <ul class="text-sm text-zinc-600 space-y-2 list-disc pl-4 leading-relaxed">
-                        <li>Developed SimPoint methodology workflows for generating checkpoints in EDA workloads.</li>
-                        <li>Correlated silicon implementation metrics with architectural models across multiple CPU architectures.</li>
+                    <p class="text-xs font-mono text-slate-500 uppercase mb-5 tracking-[0.3em] font-bold underline decoration-slate-800 underline-offset-4">Performance Analysis of EDA Workloads</p>
+                    <ul class="text-sm text-slate-400 space-y-4 max-w-3xl leading-relaxed">
+                        <li class="flex gap-3"><span class="text-indigo-500 font-bold italic">//</span> Developed a comprehensive workflow for generating checkpoints in EDA workloads using <strong>SimPoint methodology</strong>, enabling optimized simulation cycles and performance analysis.</li>
+                        <li class="flex gap-3"><span class="text-indigo-500 font-bold italic">//</span> Validated and correlated performance metrics across silicon implementations and architecture models for cross-platform alignment.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- RESEARCH & CORE PROJECTS -->
         <section id="projects">
-            <h3 class="section-title text-xl text-zinc-900">Selected Engineering Works</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project: Cache -->
-                <div class="p-6 border border-zinc-100 rounded-xl project-card transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-zinc-900 italic">Cache Analysis Framework</h4>
-                        <a href="https://github.com/rebelsuraj1506/BACP" target="_blank" class="mono text-[10px] text-indigo-600 font-bold underline">Git_Repo</a>
+            <h3 class="section-title">03. Selected Engineering Systems</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Research: Cache Analysis -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">Cache Performance Framework</h4>
+                        <a href="https://github.com/rebelsuraj1506/BACP" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest">Source_Code</a>
                     </div>
-                    <p class="text-xs text-zinc-500 leading-relaxed mb-4">C++ simulator using Intel Pin. Implemented LRU/RRIP policies for 28% gain in hit rate.</p>
-                    <span class="mono text-[9px] bg-zinc-50 px-2 py-1 rounded text-zinc-400 font-bold">C++ // SYSTEMS</span>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed italic">
+                        C++ simulation utilizing <strong>Intel Pin</strong> and <strong>Valgrind</strong> to instrument memory reference traces. Implemented LRU and RRIP policies on <strong>PARSEC benchmarks</strong>, resulting in up to <strong>28% increase</strong> in cache hit rate.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">C++ // INTEL PIN</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">VALGRIND</span>
+                    </div>
                 </div>
-                <!-- Project: RSNA -->
-                <div class="p-6 border border-zinc-100 rounded-xl project-card transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-zinc-900 italic">RSNA Trauma Detection</h4>
-                        <a href="https://github.com/rebelsuraj1506/RSNA" target="_blank" class="mono text-[10px] text-indigo-600 font-bold underline">Git_Repo</a>
+
+                <!-- Kaggle: RSNA -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">RSNA Abdominal Detection</h4>
+                        <a href="https://github.com/rebelsuraj1506/RSNA" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest">Source_Code</a>
                     </div>
-                    <p class="text-xs text-zinc-500 leading-relaxed mb-4">Ranked 91st Globally. CNN pipeline for medical segmentation & categorization.</p>
-                    <span class="mono text-[9px] bg-zinc-50 px-2 py-1 rounded text-zinc-400 font-bold">PYTORCH // CV</span>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed italic">
+                        Secured <strong>Global Rank 91st</strong> (Top 1%) on Kaggle. Engineered a CNN model capable of precise categorization of segmented images across diverse injury types. Earned Bronze Medal.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">TENSORFLOW // CV</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter italic">KAGGLE BRONZE</span>
+                    </div>
                 </div>
-                <!-- Project: Falcon -->
-                <div class="p-6 border border-zinc-100 rounded-xl project-card transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-zinc-900 italic">Falcon 7B QLoRA</h4>
-                        <a href="https://github.com/rebelsuraj1506/Falcon" target="_blank" class="mono text-[10px] text-indigo-600 font-bold underline">Git_Repo</a>
+
+                <!-- NLP: Falcon 7B -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">Falcon 7B LLM Deployment</h4>
+                        <a href="https://github.com/rebelsuraj1506/Falcon" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest">Source_Code</a>
                     </div>
-                    <p class="text-xs text-zinc-500 leading-relaxed mb-4">Fine-tuned LLM for QA. Achieved 93.2% sentiment accuracy using BERT on SST2.</p>
-                    <span class="mono text-[9px] bg-zinc-50 px-2 py-1 rounded text-zinc-400 font-bold">PYTHON // QLORA</span>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed italic">
+                        Fine-tuned Falcon 7B Instruct via <strong>QLoRA</strong>. Implemented sentiment analysis on SST2 dataset (67k sentences) achieving <strong>93.23% accuracy</strong> using BERT.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">PYTHON // QLORA</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">BERT // NLP</span>
+                    </div>
                 </div>
-                <!-- Project: Hostel -->
-                <div class="p-6 border border-zinc-100 rounded-xl project-card transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-zinc-900 italic">Hostel Management System</h4>
-                        <a href="https://github.com/rebelsuraj1506/Hostel-Management-System" target="_blank" class="mono text-[10px] text-indigo-600 font-bold underline">Git_Repo</a>
+
+                <!-- Vision: Plate Detection -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">YOLO v3 Vision System</h4>
+                        <a href="https://github.com/rebelsuraj1506/License-number-plate-detection" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest">Source_Code</a>
                     </div>
-                    <p class="text-xs text-zinc-500 leading-relaxed mb-4">Full-stack student records system. Scalable CRUD architecture using PHP/MySQL.</p>
-                    <span class="mono text-[9px] bg-zinc-50 px-2 py-1 rounded text-zinc-400 font-bold">PHP // SQL</span>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed italic">
+                        Real-time vision system using <strong>YOLO v3</strong> for contour-based plate identification and CNN for character segmentation. Achieved 72% end-to-end system accuracy.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">YOLO V3 // CNN</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter">CV // PYTHON</span>
+                    </div>
+                </div>
+
+                <!-- Web: Hostel Management -->
+                <div class="project-card bg-slate-900/40 rounded-3xl p-8 flex flex-col md:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-bold text-white italic tracking-tight underline decoration-indigo-500/50 underline-offset-8 decoration-2">Hostel Management Web Infrastructure</h4>
+                        <a href="https://github.com/rebelsuraj1506/Hostel-Management-System" target="_blank" class="mono text-[10px] text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded bg-indigo-500/5 hover:bg-indigo-500/20 transition-all font-bold uppercase tracking-widest">Source_Code</a>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed italic">
+                        Full-stack student record and room allocation system. Designed for scalable CRUD operations using PHP and MySQL. Handled student records and payment data securely.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter font-bold">PHP // MYSQL</span>
+                        <span class="mono text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded uppercase font-bold tracking-tighter font-bold uppercase">JS // BOOTSTRAP</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SKILLS -->
         <section id="skills">
-            <h3 class="section-title text-xl text-zinc-900">Technical Arsenal</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-sm">
+            <h3 class="section-title">04. Technical Arsenal</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
                 <div>
-                    <p class="font-bold text-zinc-900 mb-2 italic">Languages</p>
-                    <p class="text-zinc-500 leading-relaxed">C/C++ (17/20),<br>Python 3.10,<br>Bash Scripting</p>
+                    <p class="font-bold text-indigo-400 mb-4 font-mono uppercase tracking-[0.2em] italic underline decoration-slate-800 underline-offset-8 text-xs">Runtime Engine</p>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> C / C++ (17/20)</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Python 3.10</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Bash / Shell Scripting</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> JavaScript / HTML / CSS</li>
+                    </ul>
                 </div>
                 <div>
-                    <p class="font-bold text-zinc-900 mb-2 italic">Data & Infra</p>
-                    <p class="text-zinc-500 leading-relaxed">PostgreSQL, Redis,<br>MySQL, MongoDB,<br>Docker, AWS</p>
+                    <p class="font-bold text-emerald-400 mb-4 font-mono uppercase tracking-[0.2em] italic underline decoration-slate-800 underline-offset-8 text-xs">Data & Systems</p>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> PostgreSQL / MySQL</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> MongoDB / NoSQL</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Redis / FastAPI</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Computer Architecture</li>
+                    </ul>
                 </div>
                 <div>
-                    <p class="font-bold text-zinc-900 mb-2 italic">Academic Service</p>
-                    <p class="text-zinc-500 leading-relaxed">TA: Compiler Design,<br>TA: Intro to ML,<br>IIT Bhubaneswar</p>
+                    <p class="font-bold text-indigo-400 mb-4 font-mono uppercase tracking-[0.2em] italic underline decoration-slate-800 underline-offset-8 text-xs">Tools & Cloud</p>
+                    <ul class="text-slate-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Docker / CI-CD</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> AWS Cloud Deploy</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Intel Pin / Valgrind</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Git / Linux Internals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- HONORS & SERVICE -->
+        <section id="honors">
+            <h3 class="section-title">05. Honors & Professional Service</h3>
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:justify-between border-b border-slate-900 pb-4 gap-4">
+                    <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                        <strong class="text-white mono italic text-xs uppercase text-indigo-400 mr-2">Honors_</strong> 
+                        Secured <span class="text-emerald-400 font-bold">GATE AIR 1267</span> in CS (2023) and <span class="text-emerald-400 font-bold">AIR 8th</span> in BCECE [LE] (2018).
+                    </p>
+                    <span class="mono text-[10px] text-slate-600 font-bold uppercase tracking-widest shrink-0">Competitive Excellence</span>
+                </div>
+                <div class="flex flex-col md:flex-row md:justify-between border-b border-slate-900 pb-4 gap-4">
+                    <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                        <strong class="text-white mono italic text-xs uppercase text-indigo-400 mr-2">Service_</strong> 
+                        Teaching Assistant for <strong>Compiler Design Lab</strong> (CS4P001) & <strong>Intro to ML</strong> (CS6L036) at <strong>IIT Bhubaneswar</strong>.
+                    </p>
+                    <span class="mono text-[10px] text-slate-600 font-bold uppercase tracking-widest shrink-0">Academic Contribution</span>
+                </div>
+                <div class="flex flex-col md:flex-row md:justify-between border-b border-slate-900 pb-4 gap-4">
+                    <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                        <strong class="text-white mono italic text-xs uppercase text-indigo-400 mr-2">Research_</strong> 
+                        Leading project under <strong>Dr. Satish Panda</strong> for fundus image classification using CNNs and advanced image processing.
+                    </p>
+                    <span class="mono text-[10px] text-slate-600 font-bold uppercase tracking-widest shrink-0">Technical Leadership</span>
                 </div>
             </div>
         </section>
 
         <!-- CONTACT SECTION -->
-        <section id="contact" class="pt-10">
+        <section id="contact" class="pt-20">
             <div class="contact-info">
-                <h2 class="text-3xl font-bold text-zinc-900 mb-4 tracking-tight">Let's Build Something Together</h2>
-                <p class="text-zinc-500 max-w-lg text-sm leading-relaxed mb-6 italic">
-                    Open for SDE-1 Backend and Systems Engineering roles. I enjoy discussing hardware-software co-design and scalable architectures.
+                <h2 class="text-4xl font-bold text-white mb-4 tracking-tighter italic underline decoration-indigo-500 underline-offset-[12px]">Optimizing for the Next Opportunity.</h2>
+                <p class="text-slate-400 max-w-xl text-base leading-relaxed mb-10 italic mt-8">
+                    I am actively seeking <strong>SDE-1 Backend and Systems Engineering</strong> roles. 
+                    I enjoy discussing hardware-software co-design, performance benchmarking, and scalable system infrastructure.
                 </p>
                 <a href="mailto:surajanand200@gmail.com" class="contact-email">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                         <path d="M22 7l-10 6L2 7"></path>
                     </svg>
@@ -212,40 +334,40 @@
 
             <div class="social-grid">
                 <a href="https://www.linkedin.com/in/surajanand2000/" target="_blank" class="social-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg>
-                    <span>LinkedIn</span>
+                    <span>LinkedIn_Profile</span>
                 </a>
                 <a href="https://github.com/rebelsuraj1506" target="_blank" class="social-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                     </svg>
-                    <span>GitHub</span>
+                    <span>GitHub_Auth</span>
                 </a>
                 <a href="https://x.com/SurajAn37241485" target="_blank" class="social-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"></path>
                     </svg>
-                    <span>Twitter / X</span>
+                    <span>Twitter / X_Feed</span>
                 </a>
                 <a href="https://www.instagram.com/suraj_anand_15/" target="_blank" class="social-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    <span>Instagram</span>
+                    <span>Instagram_Log</span>
                 </a>
             </div>
         </section>
 
     </main>
 
-    <footer class="max-w-4xl mx-auto px-6 py-20 text-center border-t border-zinc-100">
-        <p class="mono text-[9px] tracking-[0.8em] text-zinc-300 uppercase italic">Suraj Anand // Optimized for Performance // SDE-1 Backend // M.Tech IIT</p>
+    <footer class="max-w-5xl mx-auto px-6 py-24 text-center border-t border-slate-900">
+        <p class="mono text-[9px] tracking-[0.8em] text-slate-700 uppercase italic">Suraj Anand // Optimized for Performance // SDE-1 Backend // M.Tech IIT</p>
     </footer>
 
 </body>
